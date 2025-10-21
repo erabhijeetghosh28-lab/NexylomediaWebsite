@@ -1,0 +1,285 @@
+
+:root{
+  --bg:#0b0d10;
+  --brand:#4ade80;
+  --accent:#60a5fa;
+}
+
+body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif}
+
+.hero{
+  min-height: 70vh;
+  background: radial-gradient(60% 100% at 0% 0%, rgba(96,165,250,.15), transparent),
+              radial-gradient(60% 100% at 100% 0%, rgba(74,222,128,.12), transparent),
+              linear-gradient(180deg, #111418, #0b0d10 60%);
+}
+
+.pagehead{
+  min-height: 40vh;
+  background: linear-gradient(180deg, #111418, #0b0d10 70%);
+}
+
+.btn-gradient{
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  border: none;
+  color: #0b0d10;
+  font-weight: 700;
+}
+
+.btn-gradient:hover{
+  opacity: .95;
+  color: #0b0d10;
+}
+
+.text-gradient{
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pill{
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.8);
+  border-radius: 999px;
+  padding: .35rem .6rem;
+  font-size: .825rem;
+}
+
+.card.glass{
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  color: #e5e7eb;
+}
+
+.whatsapp-fab{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #25D366;
+  color: #0b0d10;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.w-fit{width:fit-content}
+.opacity-90{opacity:.9}
+
+.navbar-brand img {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ============================
+   WHAT WE DO — Cards + Crop Box
+   Requires CSS variables:
+     --brand  (e.g., #4ade80)
+     --accent (e.g., #60a5fa)
+   ============================ */
+
+/* Uniform image crop container */
+.crop-box {
+  width: 100%;
+  height: 260px;              /* visible crop height (adjust 220–320px as you like) */
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+.crop-box img,
+.crop-box .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* visual crop */
+  object-position: center;     /* center focus (change to 'top'/'bottom' if needed) */
+  transition: transform .45s ease, filter .45s ease;
+  display: block;
+}
+
+/* Main card shell */
+.service-card {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  text-decoration: none;       /* entire card is clickable; no underline */
+  color: inherit;
+}
+
+/* Brand gradient BORDER glow on hover (image stays visible) */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  /* Create a gradient 'stroke' by masking out the center */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 2;
+}
+
+/* Inner body */
+.service-card .card-body {
+  position: relative;
+  z-index: 1;                  /* above image but below ::before since it's only a border */
+  background: #fff;
+  text-align: center;
+  padding: 16px;
+  transition: background .35s ease, color .35s ease;
+}
+
+.service-card h3 {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.service-card p {
+  margin: 0;
+  color: #6b7280; /* muted */
+  font-size: .925rem;
+}
+
+/* Hover & focus interactions */
+.service-card:hover,
+.service-card:focus-visible {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.18);
+  border-color: transparent;
+}
+
+.service-card:hover::before,
+.service-card:focus-visible::before {
+  opacity: 1; /* show gradient stroke */
+}
+
+.service-card:hover .crop-box img,
+.service-card:focus-visible .crop-box img {
+  transform: scale(1.08);
+  filter: brightness(1.08) saturate(1.15);
+}
+
+/* Focus ring for keyboard users (accessibility) */
+.service-card:focus-visible {
+  outline: 3px solid rgba(96,165,250,.55);   /* soft blue */
+  outline-offset: 3px;
+}
+
+/* Optional: subtle elevate effect on mobile tap */
+@media (hover: none) {
+  .service-card:active {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  }
+}
+
+/* Responsive crop heights */
+@media (max-width: 992px) {    /* tablets */
+  .crop-box { height: 230px; }
+}
+@media (max-width: 576px) {    /* phones */
+  .crop-box { height: 200px; }
+}
+/* --- PACKAGE CARD STYLING --- */
+.package-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.package-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.package-card ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.package-card .btn-gradient {
+  background: linear-gradient(135deg, #4ade80, #60a5fa);
+  border: none;
+  font-weight: 700;
+  color: #000;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.package-card .btn-gradient:hover {
+  background: linear-gradient(135deg, #22c55e, #3b82f6);
+  color: #fff;
+}
+
+.package-card .card-body h3 {
+  font-weight: 600;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Ensure equal heights & bottom alignment across all screen sizes */
+.row.g-4 .card.h-100 {
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    color: #00d084 !important;
+  }
+  .navbar .dropdown-toggle::after {
+    transition: transform .2s ease;
+  }
+  .navbar .dropdown.show .dropdown-toggle::after,
+  .navbar .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* 2️⃣ Style the dropdown menu */
+.navbar .dropdown-menu {
+  background-color: #0d1b2a; /* match your dark navbar */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0;
+}
+
+/* 3️⃣ Style dropdown items */
+.navbar .dropdown-item {
+  color: #e0e0e0;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* 4️⃣ Highlight each service item on hover */
+.navbar .dropdown-item:hover {
+  background: linear-gradient(90deg, #00d084, #2998ff);
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* 5️⃣ Divider subtle */
+.dropdown-divider {
+  border-color: rgba(255,255,255,0.15);
+}
