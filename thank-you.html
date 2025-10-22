@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Nexylomedia — Proposal on the way</title>
+  <meta name="description" content="Thanks for contacting Nexylomedia. Your message is in. We’ll reply within 24 hours with a tailored growth plan and quote." />
+  <link rel="icon" href="/assets/img/Nexylomedia_logo.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thanks! We got your message — Nexylomedia" />
+  <meta property="og:description" content="Proposal in 24 hours. Meanwhile, explore our services or chat with us on WhatsApp." />
+  <meta property="og:image" content="https://nexylomedia.com/assets/img/og.png" />
+  <meta property="og:url" content="https://nexylomedia.com/thank-you" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Bootstrap + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); /* ← put your GA4 ID */
+  </script>
+
+  <style>
+    :root{
+      --bg1:#0d1b2a;
+      --bg2:#1b263b;
+      --accent1:#2998ff;
+      --accent2:#00d084;
+    }
+    html,body{ height:100%; }
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 20% -10%, #11243a 0%, transparent 60%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      padding: 24px;
+    }
+    .wrap{
+      max-width: 920px; width:100%;
+    }
+    .hero{
+      position:relative;
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      padding: 42px 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .badge-ring{
+      width:92px; height:92px; border-radius:999px;
+      display:grid; place-items:center;
+      background: radial-gradient(circle at 70% 30%, rgba(255,255,255,.28), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.25);
+      margin:0 auto 16px;
+      position:relative;
+      animation: pop .6s cubic-bezier(.2,.8,.2,1) both;
+    }
+    @keyframes pop{ from{transform:scale(.6); opacity:0} to{transform:scale(1); opacity:1} }
+    .tick{
+      width:44px; height:44px;
+      stroke:white; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round;
+      stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 900ms 200ms ease forwards;
+    }
+    @keyframes draw{ to{ stroke-dashoffset:0 } }
+    h1{ font-weight:800; letter-spacing:.2px; }
+    .lead{ color:#dfe8f3; }
+    .btn-gradient{
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+      border: none; color:#00111a;
+      font-weight:700; padding:.85rem 1.25rem;
+      border-radius:12px;
+      box-shadow: 0 8px 24px rgba(41,152,255,.35);
+    }
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.35);
+      color:#fff;
+      padding:.85rem 1.25rem;
+      border-radius:12px;
+      background:transparent;
+    }
+    .next-steps .card{
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:#e9f1fb;
+    }
+    .logos{
+      opacity:.8; gap:24px; flex-wrap:wrap;
+      filter: contrast(0) brightness(1.8) grayscale(1);
+    }
+    .confetti{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .piece{
+      --x:0; --y:0; --r:0; --d:0;
+      position:absolute; width:10px; height:10px; border-radius:2px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+      transform: translate(var(--x), var(--y)) rotate(var(--r));
+      animation: fall calc(900ms + var(--d)*1ms) ease-out forwards;
+    }
+    @keyframes fall{
+      from{ transform: translate(var(--x), -40px) rotate(0deg); opacity:0 }
+      to{ transform: translate(calc(var(--x) * 1.6), calc(160px + var(--y))) rotate(240deg); opacity:1 }
+    }
+    @media (max-width: 540px){
+      .hero{ padding:28px 20px }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero text-center">
+      <!-- confetti -->
+      <div class="confetti" id="confetti"></div>
+
+      <!-- success badge -->
+      <div class="badge-ring">
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="mb-2">Thank you — we got it!</h1>
+      <p class="lead mb-4">Your request is in our queue. You’ll receive a tailored plan & quote within <strong>24 hours</strong> (usually sooner).</p>
+
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <a href="https://wa.me/918638310045?text=Hi%20Nexylomedia%2C%20I%20just%20submitted%20the%20form.%20Can%20we%20chat%20now%3F" class="btn btn-gradient"
+           onclick="trackCta('whatsapp_click')">Chat on WhatsApp</a>
+        <a href="/" class="btn btn-outline" onclick="trackCta('back_home')">← Back to Home</a>
+      </div>
+
+      <!-- social proof / logos -->
+      <div class="mt-5">
+        <div class="small text-uppercase mb-2" style="letter-spacing:.1em; opacity:.7;">Playbooks for</div>
+        <div class="d-flex logos justify-content-center align-items-center">
+          <img src="/assets/img/icons/fashion.svg" alt="Fashion" height="22">
+          <img src="/assets/img/icons/interiors.svg" alt="Interiors" height="22">
+          <img src="/assets/img/icons/skincare.svg" alt="Skincare" height="22">
+          <img src="/assets/img/icons/fmcg.svg" alt="FMCG" height="22">
+          <img src="/assets/img/icons/ev.svg" alt="EV" height="22">
+          <img src="/assets/img/icons/architecture.svg" alt="Architecture" height="22">
+        </div>
+      </div>
+
+      <!-- next steps -->
+      <div class="next-steps container px-0 mt-5">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card h-100 p-3">
+              <div class="fw-bold mb-1">1) Kickoff</div>
+              <div class="small">We confirm goals & access (GA4, GSC, ad accounts). You’ll get a short checklist.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-3">
+              <div class="fw-bold mb-1">2) 24-hr plan</div>
+              <div class="small">Channels, quick wins, forecast range, and first-month sprint outline.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-3">
+              <div class="fw-bold mb-1">3) Start</div>
+              <div class="small">We launch tracking + page + campaigns → weekly ROI snapshot dashboard.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Confetti + GA4 events -->
+  <script>
+    // GA4 conversion on view
+    if (typeof gtag === 'function') {
+      gtag('event', 'lead_form_success', {
+        event_category: 'Leads',
+        event_label: 'Thank You Page',
+        page_location: window.location.href
+      });
+    }
+    function trackCta(label){
+      if (typeof gtag === 'function') {
+        gtag('event', 'thankyou_cta_click', { event_category:'Leads', event_label:label });
+      }
+    }
+
+    // Tiny confetti burst (no library)
+    (function burst(){
+      const c = document.getElementById('confetti');
+      const pieces = 26;
+      for(let i=0;i<pieces;i++){
+        const d = document.createElement('span');
+        d.className='piece';
+        d.style.setProperty('--x', (Math.random()*220-110)+'px');
+        d.style.setProperty('--y', (Math.random()*80)+'px');
+        d.style.setProperty('--r', (Math.random()*200-100)+'deg');
+        d.style.setProperty('--d', (200+Math.random()*900).toFixed(0));
+        c.appendChild(d);
+      }
+      setTimeout(()=>c.innerHTML='', 2000);
+    })();
+  </script>
+</body>
+</html>
