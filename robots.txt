@@ -1,4 +1,31 @@
+# ------------------------------------------------------------
+# Nexylomedia Robots.txt
+# Controls search engine crawling & indexing
+# ------------------------------------------------------------
+
+# âœ… Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-Sitemap: https://nexylomedia.com/sitemap.xml
+# ðŸš« Block internal system or irrelevant folders
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/vendor/
+Disallow: /.git/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /error_log
+
+# Optional: block access to any testing or temporary pages
+# Disallow: /test/
+# Disallow: /backup/
+
+# âœ… Sitemap location
+Sitemap: https://nexylomedia.com/sitemap_index.xml
+
+# ------------------------------------------------------------
+# Notes:
+# - Keep this file in the root (/public_html/)
+# - Update Sitemap URL if the file moves or name changes
+# - Use Google Search Console > robots.txt Tester to validate
+# ------------------------------------------------------------
