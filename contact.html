@@ -3,27 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nexylomedia — Digital Growth Studio</title>
-  <meta name="description" content="Nexylomedia helps fashion, interiors, skincare, EV, F&B and architects grow with digital marketing, influencer campaigns, product shoots, SEO and dashboards."/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Contact | Nexylomedia — Digital Growth Studio</title>
+  <meta name="description" content="Tell us about your goals — Nexylomedia helps brands grow with ROI-first digital marketing, SEO, product photography, influencer campaigns, and dashboards.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/Nexylomedia_logo.png" type="image/png" />
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/img/Nexylomedia_logo.png" type="image/svg+xml" />
-  <meta property="og:title" content="Nexylomedia — Digital Growth Studio">
-  <meta property="og:description" content="ROI-first marketing, influencers, product shoots, SEO, dashboards.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- GA4 placeholder: replace G-XXXXXXX below
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="Contact Nexylomedia" />
+  <meta property="og:description" content="Get a free proposal within 24 hours. ROI-first marketing, influencer campaigns, product shoots, SEO and dashboards." />
+  <meta property="og:image" content="https://nexylomedia.com/assets/img/og.png" />
+  <meta property="og:url" content="https://nexylomedia.com/contact" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- GA4 Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
+    gtag('config', 'G-XXXXXXX'); // Replace with your GA4 ID
   </script>
-  -->
 </head>
 
 <body>
@@ -42,7 +50,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 
         <!-- Services dropdown -->
         <li class="nav-item dropdown">
@@ -56,13 +64,12 @@
             <li><a class="dropdown-item" href="/services/market-research">Market research</a></li>
             <li><a class="dropdown-item" href="/services/dashboard-analytics">Dashboards & analytics</a></li>
             <li><hr class="dropdown-divider"></li>
-            <!-- If you don't have a /services index page, keep this pointing to any service anchor -->
             <li><a class="dropdown-item" href="/services/digital-marketing#all">View all services →</a></li>
           </ul>
         </li>
 
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/contact">Contact</a></li>
       </ul>
 
       <a class="btn btn-gradient ms-lg-3" href="/contact">Get Proposal</a>
@@ -72,17 +79,25 @@
 <!-- NAVBAR END -->
 
 
+<!-- HEADER -->
 <header class="pagehead text-white text-center d-flex align-items-center">
   <div class="container py-5">
     <h1 class="display-6 fw-bold">Tell us about your goals</h1>
     <p class="lead opacity-90">No upfront pricing—only ROI. Share your goals; we’ll send a plan and quote within 24 hours.</p>
   </div>
 </header>
+
+<!-- MAIN CONTENT -->
 <main class="container my-5">
   <div class="row g-4">
     <div class="col-lg-7">
-      <div class="card p-4">
-        <form id="leadForm" action="https://formspree.io/f/your-id" method="POST">
+      <div class="card p-4 shadow-sm border-0">
+        <form id="leadForm" action="https://formspree.io/f/mblzlvey" method="POST" novalidate>
+          <!-- Hidden fields -->
+          <input type="hidden" name="_subject" value="New Lead — Nexylomedia Website">
+          <input type="hidden" name="_next" value="https://nexylomedia.com/thank-you">
+          <input type="text" name="_gotcha" style="display:none">
+
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Your name</label>
@@ -98,35 +113,38 @@
             </div>
             <div class="col-12">
               <label class="form-label">What do you need?</label>
-              <textarea class="form-control" name="message" rows="5" placeholder="e.g., 50 qualified leads/mo for interiors in Noida; shoot 20 SKUs; SEO for skincare clinic website" required></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="e.g., 50 qualified leads/mo for interiors in Noida; SEO for skincare brand" required></textarea>
             </div>
             <div class="col-12 d-flex align-items-center gap-3">
               <button class="btn btn-gradient" type="submit">Get proposal</button>
-              <span class="text-muted small">or mail us: Sales@nexylomedia.com</span>
+              <span class="text-muted small">or mail us: <a href="mailto:Sales@nexylomedia.com">Sales@nexylomedia.com</a></span>
             </div>
           </div>
         </form>
       </div>
     </div>
+
+    <!-- SIDE INFO -->
     <div class="col-lg-5">
-      <div class="card p-4">
+      <div class="card p-4 shadow-sm border-0">
         <h3 class="h6">Why Nexylomedia</h3>
         <ul class="small m-0 ps-3">
-          <li>ROI‑first engagements, not hourly retainers</li>
-          <li>In‑house creative + analytics + media</li>
+          <li>ROI-first engagements, not hourly retainers</li>
+          <li>In-house creative + analytics + media</li>
           <li>Clear reporting and dashboards</li>
-          <li>Industry‑specific playbooks</li>
+          <li>Industry-specific playbooks</li>
         </ul>
         <div class="d-flex gap-2 mt-3 flex-wrap">
           <span class="badge text-bg-light">Fast turnaround</span>
           <span class="badge text-bg-light">Transparent comms</span>
-          <span class="badge text-bg-light">Founder‑led</span>
+          <span class="badge text-bg-light">Founder-led</span>
         </div>
       </div>
     </div>
   </div>
 </main>
 
+<!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-4 mt-5">
   <div class="container small">
     <div class="mb-2">© <span id="year"></span> Nexylomedia. All rights reserved.</div>
@@ -134,14 +152,32 @@
       <a class="text-white-50" href="#" target="_blank" rel="noreferrer">Instagram</a>
       <a class="text-white-50" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
       <a class="text-white-50" href="#" target="_blank" rel="noreferrer">YouTube</a>
-      <a class="text-white-50" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="text-white-50" href="https://wa.me/918638310045" target="_blank" rel="noreferrer">WhatsApp</a>
     </div>
   </div>
 </footer>
 
+<!-- WhatsApp FAB -->
 <a href="https://wa.me/918638310045" class="whatsapp-fab" aria-label="WhatsApp chat"><span>WhatsApp</span></a>
 
-<script src="{bootstrap_js}"></script>
-<script src="assets/js/app.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- GA4 Lead Event -->
+<script>
+  const form = document.getElementById('leadForm');
+  form.addEventListener('submit', function() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'lead_form_submitted', {
+        event_category: 'Leads',
+        event_label: 'Contact Form',
+        page_location: window.location.href
+      });
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="/assets/js/app.js"></script>
 </body>
 </html>
