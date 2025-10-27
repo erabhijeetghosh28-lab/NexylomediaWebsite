@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Nexylomedia — Digital Growth Studio</title>
+
+  <!-- Short, Google-friendly meta description (~150 chars) -->
   <meta name="description" content="Nexylomedia helps fashion, interiors, skincare, EV & FMCG brands grow with ROI-first marketing, SEO, influencer campaigns & analytics.">
-  <link rel="canonical" href="https://nexylomedia.netlify.app/about.html" />
+  <link rel="canonical" href="https://nexylomedia.com/about" />
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -16,76 +18,95 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
 
-  <!-- Your site CSS (keep your existing file; if you have a minified one, swap the href) -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Your site CSS (keep this) -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Critical dark theme (restores black + teal glow immediately) -->
+  <!-- Critical theme fixes (contrast + hero brightness) -->
   <style>
-    :root{--bg:#0b0f17;--bg-2:#0d1b2a;--fg:#e8f0ff;--muted:#a9b2c3;--teal:#00d084;}
-    html,body{background:var(--bg); color:var(--fg);}
+    :root{
+      --bg:#0b0f17;        /* page */
+      --bg-2:#0d1b2a;      /* navbar */
+      --fg:#eaf2ff;        /* main text */
+      --muted:#c5cfde;     /* secondary text */
+      --line:#1f2a3b;      /* borders */
+      --teal:#00d084;
+      --blue:#2998ff;
+      --card:rgba(255,255,255,.065); /* cards */
+    }
+    html,body{background:var(--bg); color:var(--fg); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    p,li,small{color:var(--muted);}
     .navbar{background-color:var(--bg-2)!important;}
+    .navbar .nav-link{color:#cfe3ff;}
+    .navbar .nav-link.active, .navbar .nav-link:hover{color:#fff;}
+    .dropdown-menu{background:#0f1a29; border-color:#142033;}
+    .dropdown-item{color:#cfe3ff;}
+    .dropdown-item:hover{background:#132135; color:#fff;}
+    .btn-gradient{background:linear-gradient(90deg,var(--teal),var(--blue)); color:#021018; border:none;}
+    .btn-gradient:hover{filter:brightness(1.06);}
+
+    /* brighter hero */
     .pagehead{
-      min-height: 280px;
+      min-height: 300px;
       background:
-        radial-gradient(1200px 400px at 50% -10%, rgba(0,208,132,.18), transparent 60%),
-        radial-gradient(600px 280px at 20% -20%, rgba(41,152,255,.10), transparent 60%),
-        linear-gradient(180deg, #0e1624 0%, #0b0f17 100%);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+        radial-gradient(1100px 420px at 50% -15%, rgba(0,208,132,.28), transparent 60%),
+        radial-gradient(700px 320px at 20% -25%, rgba(41,152,255,.18), transparent 60%),
+        linear-gradient(180deg, #0f1a29 0%, #0b0f17 100%);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .btn-gradient{
-      background: linear-gradient(90deg,#00d084,#2998ff);
-      color:#031018;
-      border:none;
+
+    /* cards & badges: increase contrast */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      color:var(--fg);
     }
-    .btn-gradient:hover{filter:brightness(1.05);}
-    .card{background:rgba(255,255,255,.03); border-color: rgba(255,255,255,.08);}
-    .text-white-50{color:#b7c2d0!important}
-    .badge.bg-dark-subtle{background:rgba(255,255,255,.08)!important;}
+    .card .small{color:var(--muted);}
+    .badge.bg-dark-subtle{
+      background:rgba(255,255,255,.12)!important;
+      color:#e9f2ff!important;
+      border:1px solid var(--line);
+    }
+
+    /* headings pop */
+    h1,h2,h3,h4,h5{color:#fff;}
+
+    /* subtle HR */
+    .dropdown-divider{border-top-color:var(--line);}
+
+    /* footer links better contrast */
+    .text-white-50{color:#bcd0ea!important}
   </style>
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/Nexylomedia_logo.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/assets/img/Nexylomedia_logo.png" type="image/png" sizes="32x32" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Social meta -->
   <meta property="og:title" content="Nexylomedia — Digital Growth Studio">
-  <meta property="og:description" content="ROI-first marketing, influencers, product shoots, SEO, dashboards.">
+  <meta property="og:description" content="ROI-first marketing, SEO, influencer campaigns and analytics for growth.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nexylomedia.netlify.app/about.html">
-  <meta property="og:image" content="https://nexylomedia.netlify.app/assets/img/og.png">
+  <meta property="og:url" content="https://nexylomedia.com/about">
+  <meta property="og:image" content="https://nexylomedia.com/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- GA -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1P1GN0SHB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V1P1GN0SHB');
+    gtag('js', new Date()); gtag('config', 'G-V1P1GN0SHB');
   </script>
 
-  <!-- Org schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nexylomedia",
-    "url": "https://nexylomedia.netlify.app/",
-    "logo": "https://nexylomedia.netlify.app/assets/img/Nexylomedia_logo.png",
-    "sameAs": [
-      "https://www.instagram.com/yourhandle",
-      "https://www.linkedin.com/company/yourcompany"
-    ],
-    "description": "Digital growth studio for fashion, interiors, skincare, EV, FMCG and architecture brands."
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Nexylomedia","url":"https://nexylomedia.com/","logo":"https://nexylomedia.com/assets/img/Nexylomedia_logo.png","sameAs":["https://www.instagram.com/yourhandle","https://www.linkedin.com/company/yourcompany"],"description":"Digital growth studio for fashion, interiors, skincare, EV, FMCG and architecture brands."}
   </script>
 </head>
 
 <body>
-<!-- NAVBAR START -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <img src="assets/img/Nexylomedia_logo.png" alt="Nexylomedia logo" loading="eager"
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <img src="/assets/img/Nexylomedia_logo.png" alt="Nexylomedia logo" loading="eager"
            style="height:42px;width:auto;border-radius:6px;background-color:#ffffff;padding:4px;">
       <strong style="color:#ffffff;">Nexylomedia</strong>
     </a>
@@ -96,47 +117,44 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 
-        <!-- Services dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
           <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navServices">
-            <li><a class="dropdown-item" href="services/digital-marketing.html">Digital marketing</a></li>
-            <li><a class="dropdown-item" href="services/influencer-marketing.html">Influencer marketing</a></li>
-            <li><a class="dropdown-item" href="services/product-photography.html">Product photography</a></li>
-            <li><a class="dropdown-item" href="services/seo.html">SEO & CRO</a></li>
-            <li><a class="dropdown-item" href="services/market-research.html">Market research</a></li>
-            <li><a class="dropdown-item" href="services/dashboard-analytics.html">Dashboards & analytics</a></li>
+            <li><a class="dropdown-item" href="/services/digital-marketing">Digital marketing</a></li>
+            <li><a class="dropdown-item" href="/services/influencer-marketing">Influencer marketing</a></li>
+            <li><a class="dropdown-item" href="/services/product-photography">Product photography</a></li>
+            <li><a class="dropdown-item" href="/services/seo">SEO & CRO</a></li>
+            <li><a class="dropdown-item" href="/services/market-research">Market research</a></li>
+            <li><a class="dropdown-item" href="/services/dashboard-analytics">Dashboards & analytics</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="services/digital-marketing.html#all">View all services →</a></li>
+            <li><a class="dropdown-item" href="/services/digital-marketing#all">View all services →</a></li>
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/about" aria-current="page">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
 
-      <a class="btn btn-gradient ms-lg-3" href="contact.html">Get Proposal</a>
+      <a class="btn btn-gradient ms-lg-3" href="/contact">Get Proposal</a>
     </div>
   </div>
 </nav>
-<!-- NAVBAR END -->
 
 <header class="pagehead text-white text-center d-flex align-items-center">
   <div class="container py-5">
     <h1 class="display-6 fw-bold">About Nexylomedia</h1>
-    <p class="lead" style="opacity:.9">ROI-first marketing studio. Strategy, creative, and performance under one roof.</p>
+    <p class="lead" style="opacity:.95">ROI-first marketing studio. Strategy, creative, and performance under one roof.</p>
   </div>
 </header>
 
 <main class="container my-5">
-  <!-- About: Who we are -->
   <section class="mb-5">
     <div class="row g-4 align-items-start">
       <div class="col-lg-7">
         <h2 class="h3 fw-bold">Who we are</h2>
-        <p class="lead">
+        <p class="lead" style="color:#dfe9fb">
           Nexylomedia is a digital growth studio where strategy, creative and performance live together.
           We partner with <strong>fashion brands</strong>, <strong>interior designers</strong>, <strong>skincare labels</strong>,
           <strong>EV startups</strong>, <strong>FMCG companies</strong> and <strong>architects</strong> to turn attention into measurable revenue.
@@ -160,7 +178,6 @@
     </div>
   </section>
 
-  <!-- Mission & values -->
   <section class="mb-5">
     <div class="row g-4">
       <div class="col-lg-6">
@@ -186,34 +203,33 @@
     </div>
   </section>
 
-  <!-- Our approach (process) -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">How we work (the Nexylo growth sprint)</h3>
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
-          <span class="badge bg-secondary-subtle text-dark w-fit mb-2">Week 1</span>
+          <span class="badge bg-dark-subtle w-fit mb-2">Week 1</span>
           <h4 class="h6 mb-2">Instrument everything</h4>
           <p class="small m-0">Fix GA4, GSC, Meta/LinkedIn Pixels, conversions & UTMs. Baseline audit and KPI sheet. Build a live dashboard.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
-          <span class="badge bg-secondary-subtle text-dark w-fit mb-2">Week 2</span>
+          <span class="badge bg-dark-subtle w-fit mb-2">Week 2</span>
           <h4 class="h6 mb-2">Offer + page</h4>
           <p class="small m-0">Clarify the offer, write sharp copy, and launch a focused landing page with persuasive creative & forms/WhatsApp handoff.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
-          <span class="badge bg-secondary-subtle text-dark w-fit mb-2">Week 3</span>
+          <span class="badge bg-dark-subtle w-fit mb-2">Week 3</span>
           <h4 class="h6 mb-2">Traffic & creators</h4>
           <p class="small m-0">Launch 1–2 paid campaigns and 10-post content plan; shortlist creators/UGC with hooks that move adds-to-cart and bookings.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
-          <span class="badge bg-secondary-subtle text-dark w-fit mb-2">Week 4</span>
+          <span class="badge bg-dark-subtle w-fit mb-2">Week 4</span>
           <h4 class="h6 mb-2">CRO & scale</h4>
           <p class="small m-0">A/B test creatives and pages. Kill losers, scale winners. Weekly report with next steps and ROI snapshot.</p>
         </div>
@@ -221,7 +237,6 @@
     </div>
   </section>
 
-  <!-- Services snapshot -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">What we do</h3>
     <div class="row g-3">
@@ -229,61 +244,59 @@
         <div class="card h-100 p-3">
           <h4 class="h6">Performance marketing</h4>
           <p class="small">Meta, Google, YouTube & LinkedIn campaigns built for ROAS and qualified leads.</p>
-          <a class="small" href="services/digital-marketing.html">Learn more →</a>
+          <a class="small" href="/services/digital-marketing">Learn more →</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">Influencer & creator ops</h4>
           <p class="small">UGC that sells, not just reaches. Creator briefs, usage rights, tracking & payout models.</p>
-          <a class="small" href="services/influencer-marketing.html">Learn more →</a>
+          <a class="small" href="/services/influencer-marketing">Learn more →</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">Product photography</h4>
           <p class="small">E-com, lifestyle and motion visuals that convert browsers into buyers.</p>
-          <a class="small" href="services/product-photography.html">Learn more →</a>
+          <a class="small" href="/services/product-photography">Learn more →</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">SEO & CRO</h4>
           <p class="small">Technical fixes, search content, and conversion lifts on pages that matter.</p>
-          <a class="small" href="services/seo.html">Learn more →</a>
+          <a class="small" href="/services/seo">Learn more →</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">Market research</h4>
           <p class="small">Competitor tracking, pricing studies, ICP insights and positioning maps.</p>
-          <a class="small" href="services/market-research.html">Learn more →</a>
+          <a class="small" href="/services/market-research">Learn more →</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">Dashboards & analytics</h4>
           <p class="small">One source of truth for marketing, sales and ops. Real-time KPIs & alerts.</p>
-          <a class="small" href="services/dashboard-analytics.html">Learn more →</a>
+          <a class="small" href="/services/dashboard-analytics">Learn more →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Industries -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">Industries we understand</h3>
     <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">Fashion</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">Interiors</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">Skincare</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">EV</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">FMCG</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle text-dark w-100 py-2">Architecture</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">Fashion</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">Interiors</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">Skincare</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">EV</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">FMCG</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><span class="badge bg-dark-subtle w-100 py-2">Architecture</span></div>
     </div>
   </section>
 
-  <!-- Proof -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">Outcomes our clients care about</h3>
     <div class="row g-3 text-center">
@@ -314,39 +327,11 @@
     </div>
   </section>
 
-  <!-- FAQs -->
   <section class="mb-5">
-    <h3 class="h4 fw-bold mb-3">FAQs</h3>
-    <div class="accordion" id="aboutFaq">
-      <!-- (FAQ items unchanged) -->
-      <!-- 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="q1">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
-            What does the first month look like?
-          </button>
-        </h2>
-        <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#aboutFaq">
-          <div class="accordion-body small">
-            <strong>Week 1:</strong> Fix tracking (GA4, GSC, Pixels), define KPIs, build a live dashboard.<br>
-            <strong>Week 2:</strong> Offer + landing page + creative plan.<br>
-            <strong>Week 3:</strong> Launch 1–2 campaigns and a 10-post content plan; shortlist creators/UGC.<br>
-            <strong>Week 4:</strong> CRO + scale winners, weekly report with clear next steps.
-          </div>
-        </div>
-      </div>
-      <!-- rest of FAQs exactly as you had -->
-      <!-- 2..9 omitted for brevity; keep same markup/content -->
-      <!-- ... -->
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="mb-5">
-    <div class="card p-4 p-lg-5 text-center border-0 shadow-sm" style="background:linear-gradient(90deg,#00d084,#2998ff);">
+    <div class="card p-4 p-lg-5 text-center border-0 shadow-sm" style="background:linear-gradient(90deg,var(--teal),var(--blue));">
       <h3 class="h4 fw-bold mb-2">Need a 30-day growth sprint?</h3>
       <p class="mb-3">Get a free plan outline—channels, ideas, quick wins, and a projected ROI range for your brand.</p>
-      <a href="contact.html" class="btn btn-dark btn-lg fw-semibold">Get proposal</a>
+      <a href="/contact" class="btn btn-dark btn-lg fw-semibold">Get proposal</a>
     </div>
   </section>
 </main>
@@ -369,8 +354,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
