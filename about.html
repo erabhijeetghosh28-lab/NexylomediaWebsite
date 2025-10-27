@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Nexylomedia — Digital Growth Studio</title>
 
-  <!-- Short, Google-friendly meta description (~150 chars) -->
+  <!-- ~150-char meta -->
   <meta name="description" content="Nexylomedia helps fashion, interiors, skincare, EV & FMCG brands grow with ROI-first marketing, SEO, influencer campaigns & analytics.">
   <link rel="canonical" href="https://nexylomedia.com/about" />
 
@@ -18,64 +18,9 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
 
-  <!-- Your site CSS (keep this) -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
-
-  <!-- Critical theme fixes (contrast + hero brightness) -->
-  <style>
-    :root{
-      --bg:#0b0f17;        /* page */
-      --bg-2:#0d1b2a;      /* navbar */
-      --fg:#eaf2ff;        /* main text */
-      --muted:#c5cfde;     /* secondary text */
-      --line:#1f2a3b;      /* borders */
-      --teal:#00d084;
-      --blue:#2998ff;
-      --card:rgba(255,255,255,.065); /* cards */
-    }
-    html,body{background:var(--bg); color:var(--fg); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
-    p,li,small{color:var(--muted);}
-    .navbar{background-color:var(--bg-2)!important;}
-    .navbar .nav-link{color:#cfe3ff;}
-    .navbar .nav-link.active, .navbar .nav-link:hover{color:#fff;}
-    .dropdown-menu{background:#0f1a29; border-color:#142033;}
-    .dropdown-item{color:#cfe3ff;}
-    .dropdown-item:hover{background:#132135; color:#fff;}
-    .btn-gradient{background:linear-gradient(90deg,var(--teal),var(--blue)); color:#021018; border:none;}
-    .btn-gradient:hover{filter:brightness(1.06);}
-
-    /* brighter hero */
-    .pagehead{
-      min-height: 300px;
-      background:
-        radial-gradient(1100px 420px at 50% -15%, rgba(0,208,132,.28), transparent 60%),
-        radial-gradient(700px 320px at 20% -25%, rgba(41,152,255,.18), transparent 60%),
-        linear-gradient(180deg, #0f1a29 0%, #0b0f17 100%);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    /* cards & badges: increase contrast */
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      color:var(--fg);
-    }
-    .card .small{color:var(--muted);}
-    .badge.bg-dark-subtle{
-      background:rgba(255,255,255,.12)!important;
-      color:#e9f2ff!important;
-      border:1px solid var(--line);
-    }
-
-    /* headings pop */
-    h1,h2,h3,h4,h5{color:#fff;}
-
-    /* subtle HR */
-    .dropdown-divider{border-top-color:var(--line);}
-
-    /* footer links better contrast */
-    .text-white-50{color:#bcd0ea!important}
-  </style>
+  <!-- Site CSS (non-blocking preload) -->
+  <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/img/Nexylomedia_logo.png" type="image/png" sizes="32x32" />
@@ -103,6 +48,7 @@
 </head>
 
 <body>
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="/">
@@ -142,14 +88,16 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="pagehead text-white text-center d-flex align-items-center">
   <div class="container py-5">
     <h1 class="display-6 fw-bold">About Nexylomedia</h1>
-    <p class="lead" style="opacity:.95">ROI-first marketing studio. Strategy, creative, and performance under one roof.</p>
+    <p class="lead opacity-90">ROI-first marketing studio. Strategy, creative, and performance under one roof.</p>
   </div>
 </header>
 
 <main class="container my-5">
+  <!-- Who we are -->
   <section class="mb-5">
     <div class="row g-4 align-items-start">
       <div class="col-lg-7">
@@ -178,6 +126,7 @@
     </div>
   </section>
 
+  <!-- Mission & values -->
   <section class="mb-5">
     <div class="row g-4">
       <div class="col-lg-6">
@@ -203,6 +152,7 @@
     </div>
   </section>
 
+  <!-- Process -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">How we work (the Nexylo growth sprint)</h3>
     <div class="row g-4">
@@ -210,33 +160,34 @@
         <div class="card h-100 p-3">
           <span class="badge bg-dark-subtle w-fit mb-2">Week 1</span>
           <h4 class="h6 mb-2">Instrument everything</h4>
-          <p class="small m-0">Fix GA4, GSC, Meta/LinkedIn Pixels, conversions & UTMs. Baseline audit and KPI sheet. Build a live dashboard.</p>
+          <p class="small m-0">Fix GA4, GSC, Pixels, conversions & UTMs. Baseline audit and KPI sheet. Live dashboard.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
           <span class="badge bg-dark-subtle w-fit mb-2">Week 2</span>
           <h4 class="h6 mb-2">Offer + page</h4>
-          <p class="small m-0">Clarify the offer, write sharp copy, and launch a focused landing page with persuasive creative & forms/WhatsApp handoff.</p>
+          <p class="small m-0">Clarify the offer, write sharp copy, launch a focused landing page with persuasive creative.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
           <span class="badge bg-dark-subtle w-fit mb-2">Week 3</span>
           <h4 class="h6 mb-2">Traffic & creators</h4>
-          <p class="small m-0">Launch 1–2 paid campaigns and 10-post content plan; shortlist creators/UGC with hooks that move adds-to-cart and bookings.</p>
+          <p class="small m-0">Launch 1–2 paid campaigns + 10-post plan; shortlist creators/UGC that drive actions.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 p-3">
           <span class="badge bg-dark-subtle w-fit mb-2">Week 4</span>
           <h4 class="h6 mb-2">CRO & scale</h4>
-          <p class="small m-0">A/B test creatives and pages. Kill losers, scale winners. Weekly report with next steps and ROI snapshot.</p>
+          <p class="small m-0">A/B test creatives/pages. Kill losers, scale winners. Weekly report with next steps.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- What we do -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">What we do</h3>
     <div class="row g-3">
@@ -250,7 +201,7 @@
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 p-3">
           <h4 class="h6">Influencer & creator ops</h4>
-          <p class="small">UGC that sells, not just reaches. Creator briefs, usage rights, tracking & payout models.</p>
+          <p class="small">UGC that sells, not just reaches. Briefs, usage rights, tracking & payouts.</p>
           <a class="small" href="/services/influencer-marketing">Learn more →</a>
         </div>
       </div>
@@ -285,6 +236,7 @@
     </div>
   </section>
 
+  <!-- Industries -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">Industries we understand</h3>
     <div class="row g-3">
@@ -297,38 +249,40 @@
     </div>
   </section>
 
+  <!-- Outcomes -->
   <section class="mb-5">
     <h3 class="h4 fw-bold mb-3">Outcomes our clients care about</h3>
     <div class="row g-3 text-center">
-      <div class="col-6 col-lg-3">
+      <div class="col-6 col-lg-3 stat">
         <div class="card p-3 h-100">
           <div class="display-6 fw-bold">3.1×</div>
-          <div class="small text-muted">best-performing ROAS in last quarter</div>
+          <div class="small">best-performing ROAS in last quarter</div>
         </div>
       </div>
-      <div class="col-6 col-lg-3">
+      <div class="col-6 col-lg-3 stat">
         <div class="card p-3 h-100">
           <div class="display-6 fw-bold">−42%</div>
-          <div class="small text-muted">lead cost reduction (6 weeks)</div>
+          <div class="small">lead cost reduction (6 weeks)</div>
         </div>
       </div>
-      <div class="col-6 col-lg-3">
+      <div class="col-6 col-lg-3 stat">
         <div class="card p-3 h-100">
           <div class="display-6 fw-bold">120</div>
-          <div class="small text-muted">bookings via paid + WhatsApp automation</div>
+          <div class="small">bookings via paid + WhatsApp automation</div>
         </div>
       </div>
-      <div class="col-6 col-lg-3">
+      <div class="col-6 col-lg-3 stat">
         <div class="card p-3 h-100">
           <div class="display-6 fw-bold">24h</div>
-          <div class="small text-muted">turnaround on weekly reports</div>
+          <div class="small">turnaround on weekly reports</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="mb-5">
-    <div class="card p-4 p-lg-5 text-center border-0 shadow-sm" style="background:linear-gradient(90deg,var(--teal),var(--blue));">
+    <div class="card p-4 p-lg-5 text-center border-0 shadow-sm" style="background:linear-gradient(90deg,var(--brand),var(--accent));">
       <h3 class="h4 fw-bold mb-2">Need a 30-day growth sprint?</h3>
       <p class="mb-3">Get a free plan outline—channels, ideas, quick wins, and a projected ROI range for your brand.</p>
       <a href="/contact" class="btn btn-dark btn-lg fw-semibold">Get proposal</a>
@@ -336,6 +290,7 @@
   </section>
 </main>
 
+<!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-4 mt-5">
   <div class="container small">
     <div class="mb-2">© <span id="year"></span> Nexylomedia. All rights reserved.</div>
