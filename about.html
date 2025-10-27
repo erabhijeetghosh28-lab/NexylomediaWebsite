@@ -17,9 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 
-  <!-- Site CSS (load normally; add cache-buster when updating) -->
+  <!-- Site CSS (load normally; cache-bust value optional) -->
   <link rel="stylesheet" href="/assets/css/style.css?v=1">
 
+  <!-- Favicon -->
   <link rel="icon" href="/assets/img/Nexylomedia_logo.png" type="image/png" sizes="32x32" />
 
   <!-- Social meta -->
@@ -30,12 +31,19 @@
   <meta property="og:image" content="https://nexylomedia.com/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- GA -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1P1GN0SHB"></script>
+  <!-- GA4: queue commands early, load library AFTER window load (non-blocking) -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-V1P1GN0SHB');
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V1P1GN0SHB');
+
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-V1P1GN0SHB';
+      s.async = true;
+      document.head.appendChild(s);
+    });
   </script>
 
   <!-- Schema -->
@@ -302,7 +310,7 @@
 
 <a href="https://wa.me/918638310045" class="whatsapp-fab" aria-label="WhatsApp chat"><span>WhatsApp</span></a>
 
-<!-- JS (deferred) -->
+<!-- JS: Bootstrap deferred (no visual change), tiny year helper -->
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
